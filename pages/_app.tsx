@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
       withNormalizeCSS
       theme={{
         colorScheme: 'dark',
-        primaryColor: 'green'
+        primaryColor: 'lime',
       }}
     >
       <Component {...pageProps} />

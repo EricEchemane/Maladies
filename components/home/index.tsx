@@ -83,8 +83,8 @@ export default function HomePage() {
         <Head> <title> Maladies Detection </title> </Head>
 
         <Title
+            id='title'
             color={'lime'}
-            size={'4rem'}
             p={'2rem 1rem 0'}
             align='center'>
             Plant <span style={{ color: 'crimson' }}> Doctor<sup>🌱</sup> </span>

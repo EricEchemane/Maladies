@@ -27,8 +27,23 @@ a {
   grid-template-columns: 1fr 1.5fr;
 }
 
+#title {
+  font-size: 4rem;
+}
+
 @media screen and (max-width:700px) {
   #main {
     grid-template-columns: 1fr !important;
+  }
+
+  #title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width:500px) {
+
+  #title {
+    font-size: 2rem;
   }
 }

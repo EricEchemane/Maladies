@@ -1,10 +1,11 @@
-import { Paper, Title, Text, Group, Button, Stack } from '@mantine/core'
+import { Title, Text, Button, Stack, Group } from '@mantine/core'
 import Head from 'next/head'
 import * as tf from '@tensorflow/tfjs'
 import { DropImage } from '../DropImage'
 import { useEffect, useState } from "react"
 import CameraCapturer from '../CameraCapturer'
-import { details, labels } from './resources'
+import { labels } from './resources'
+import Results from './Results'
 
 function useIsMobileDevice() {
     const [isMobileDevice, setIsMobileDevice] = useState(true)
@@ -96,15 +97,16 @@ export default function HomePage() {
             An outdoor plant maladies detection method based on real-time object detection
         </Text>
 
-        <Stack
-            style={{ width: 'min(500px, 100%)' }}
-            px='xl'
-            m={'2rem auto'}>
-            <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
-            <Button onClick={openCamera}>
-                or Capture From Camera
-            </Button>
-        </Stack>
+        <main id='main' data-prediction={prediction ? 'true' : 'false'}>
+            <Stack>
+                <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
+                <Button onClick={openCamera}>
+                    or Capture From Camera
+                </Button>
+            </Stack>
+            {prediction && <Results prediction={prediction} />}
+        </main>
+
 
         <CameraCapturer
             isMobileDevice={isMobileDevice}

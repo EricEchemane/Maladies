@@ -14,3 +14,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#main {
+  display: grid;
+  grid-template-columns: min(500px, 100%);
+  justify-content: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+#main[data-prediction='true'] {
+  grid-template-columns: 1fr 1.5fr;
+}
+
+@media screen and (max-width:700px) {
+  #main {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -46,8 +46,7 @@ export function DropImage(props: Partial<DropImageProps>) {
                                 id='image'
                                 src={props.imgsrc}
                                 alt="soil image"
-                                height={"256"}
-                                width={"256"} />
+                                style={{ objectFit: 'cover', width: '100%' }} />
                             <Text align='center'>  Click the image again to choose different one </Text>
                         </Stack>
                         : <div>

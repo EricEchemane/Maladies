@@ -1,4 +1,4 @@
-import { Paper, Title, Text, Group, Button } from '@mantine/core'
+import { Paper, Title, Text, Group, Button, Stack } from '@mantine/core'
 import Head from 'next/head'
 import * as tf from '@tensorflow/tfjs'
 import { DropImage } from '../DropImage'
@@ -90,22 +90,22 @@ export default function HomePage() {
             Plant <span style={{ color: 'crimson' }}> Doctor </span>
         </Title>
         <Text
+            px={'md'}
             transform='capitalize'
             size={'xl'}
             align='center'>
             An outdoor plant maladies detection method based on real-time object detection
         </Text>
 
-        <Group
-            onClick={openCamera}
-            align={'flex-end'}
-            style={{ width: 'min(900px, 100%)' }}
+        <Stack
+            style={{ width: 'min(500px, 100%)' }}
+            px='xl'
             m={'2rem auto'}>
             <DropImage onDrop={handleDrop} imgsrc={imgSrc} loading={classifying} />
-            <Button>
-                Capture From Camera
+            <Button onClick={openCamera}>
+                or Capture From Camera
             </Button>
-        </Group>
+        </Stack>
 
         <CameraCapturer
             isMobileDevice={isMobileDevice}

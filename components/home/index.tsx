@@ -4,6 +4,7 @@ import * as tf from '@tensorflow/tfjs'
 import { DropImage } from '../DropImage'
 import { useEffect, useState } from "react"
 import CameraCapturer from '../CameraCapturer'
+import { details, labels } from './resources'
 
 function useIsMobileDevice() {
     const [isMobileDevice, setIsMobileDevice] = useState(true)
@@ -12,8 +13,6 @@ function useIsMobileDevice() {
     }, [])
     return isMobileDevice
 }
-
-const labels = ['Squash Powdery Mildew', 'Tomato Healthy', 'Tomato Septoria Leaf Spot']
 
 export default function HomePage() {
     const isMobileDevice = useIsMobileDevice()
@@ -87,7 +86,7 @@ export default function HomePage() {
             size={'4rem'}
             p={'2rem 1rem 0'}
             align='center'>
-            Plant <span style={{ color: 'crimson' }}> Doctor </span>
+            Plant <span style={{ color: 'crimson' }}> Doctor<sup>🌱</sup> </span>
         </Title>
         <Text
             px={'md'}

@@ -15,7 +15,7 @@ export default function Results({ prediction }: Props) {
     return <>
         <Stack>
             {prediction.type === "Tomato Healthy" && <>
-                <Title> Your Tomato Plant Is Healthy.Great Job! </Title>
+                <Title> Your Tomato Plant Is Healthy. Great Job! </Title>
             </>}
             {prediction.type === "Tomato Septoria Leaf Spot" && <Stack>
                 <Title> Tomato Septoria Leaf Spot </Title>

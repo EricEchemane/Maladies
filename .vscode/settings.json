@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    ".next": true,
+    "node_modules": true,
+    ".eslintrc.json": true,
+    "next-env.d.ts": true,
+    "package-lock.json": true,
+    "next.config.js": true
+  }
+}

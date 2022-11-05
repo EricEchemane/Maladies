@@ -1,4 +1,4 @@
-import { Title, Text, Button, Stack, Group } from '@mantine/core';
+import { Title, Text, Button, Stack, Modal } from '@mantine/core';
 import Head from 'next/head';
 import * as tf from '@tensorflow/tfjs';
 import { DropImage } from '../DropImage';
@@ -25,6 +25,7 @@ export default function HomePage() {
         type: string;
         confidence: number;
     } | null>();
+    const [notAPlant, setnotAPlant] = useState(false);
 
     async function handleDrop(files: File[]) {
         const file = files[0];
@@ -66,6 +67,13 @@ export default function HomePage() {
         const type = labels[index];
 
         console.log(type, confidence);
+
+        if (type === "not plant") {
+            setClassifying(false);
+            setPrediction(null);
+            setnotAPlant(true);
+            return;
+        }
 
         setPrediction({ confidence, type });
         setClassifying(false);
@@ -114,5 +122,20 @@ export default function HomePage() {
             onCaptured={predictFromCamera}
             onClose={() => setCameraIsOpen(false)}
         />
+
+        <Modal
+            withCloseButton={false}
+            opened={notAPlant}
+            onClose={() => { }}>
+            <Title mb={'xl'} order={3} align='center'>
+                Seems like the image is not a plant 😅
+            </Title>
+            <Button
+                fullWidth
+                color={'orange'}
+                onClick={() => setnotAPlant(false)}>
+                OK, Try another
+            </Button>
+        </Modal>
     </>;
 }

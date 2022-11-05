@@ -1,4 +1,4 @@
-export const labels = ['Squash Powdery Mildew', 'Tomato Healthy', 'Tomato Septoria Leaf Spot']
+export const labels = ['not plant', 'Squash Powdery Mildew', 'Tomato Healthy', 'Tomato Septoria Leaf Spot'];
 
 export const details = {
     "Squash Powdery Mildew": {
@@ -43,4 +43,4 @@ export const details = {
 
     },
     "Tomato Healthy": "Your Tomato Plany Is Healthy. Great Job!",
-}
+};

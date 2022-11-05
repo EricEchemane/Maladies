@@ -1,9 +1,10 @@
 html,
 body {
+  --bgColor: #c0c0c0;
+  --primaryColor: #003221;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-color: var(--bgColor); */
 }
 
 a {
@@ -12,6 +13,7 @@ a {
 }
 
 * {
+  font-family: 'Playfair Display', serif !important;
   box-sizing: border-box;
 }
 
@@ -21,6 +23,7 @@ a {
   justify-content: center;
   padding: 3rem 2rem;
   gap: 2rem;
+  /* background-color: var(--bgColor); */
 }
 
 #main[data-prediction='true'] {
@@ -29,6 +32,14 @@ a {
 
 #title {
   font-size: 4rem;
+  color: var(--primaryColor);
+}
+
+#dahon {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
 }
 
 @media screen and (max-width:700px) {
@@ -39,6 +50,10 @@ a {
   #title {
     font-size: 3rem;
   }
+
+  #dahon {
+    display: none;
+  }
 }
 
 @media screen and (max-width:500px) {
@@ -46,4 +61,9 @@ a {
   #title {
     font-size: 2rem;
   }
+}
+
+#sub-title {
+  backdrop-filter: blur(1rem);
+  padding: 1rem;
 }

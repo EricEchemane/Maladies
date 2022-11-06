@@ -68,14 +68,14 @@ export default function HomePage() {
 
         console.log(type, confidence);
 
-        // if (type === "not plant") {
-        //     setClassifying(false);
-        //     setPrediction(null);
-        //     setnotAPlant(true);
-        //     return;
-        // }
+        if (type === "not plant") {
+            setClassifying(false);
+            setPrediction(null);
+            setnotAPlant(true);
+            return;
+        }
 
-        setPrediction({ confidence: 0.98, type: "Squash Powdery Mildew" });
+        setPrediction({ confidence, type });
         setClassifying(false);
     };
 
